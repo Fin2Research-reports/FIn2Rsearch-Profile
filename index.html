@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .center-image {
+            text-align: center;
+            margin: 10px;
+        }
+        .nav-container {
+            display: none;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .nav-item {
+            list-style: none;
+            margin: 10px;
+        }
+        .nav-link {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+            background-color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .nav-link:hover {
+            background-color: #e9e9e9;
+        }
+        .tab-container {
+            margin: 20px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tab.active {
+            border-bottom: 2px solid red;
+            color: black;
+        }
+        .tab.inactive {
+            color: #aaa;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: 50px;
+            width: 100%;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 22%;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card h3 {
+            margin: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .recommendation {
+            color: white;
+            padding: 10px;
+            border-radius: 100px;
+            text-align: center;
+            font-style: italic;
+        }
+        .sell {
+            background-color: red;
+            text-align: center;
+        }
+        .add {
+            background-color: blue;
+        }
+        .buy {
+            background-color: green;
+        }
+        .insight {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-image">
+        <a href="https://fin2research.com/">
+            <img src="https://firebasestorage.googleapis.com/v0/b/fin2research-e902b.appspot.com/o/Fin2Research.jpg?alt=media&token=e138523d-957f-4fa9-bf4d-260ad8b60522" width="300px" height="75px" alt="Fin2Research">
+        </a>
+    </div>
+
+    <div class="tab-container">
+        <div class="tab active" onclick="showTab('Company PPT')">Company PPT</div>
+        <div class="tab inactive" onclick="showTab('Equity Portfolio Strategy')">Equity Portfolio Strategy</div>
+        <div class="tab inactive" onclick="showTab('Form')">Onboarding Form</div>
+    </div>
+
+    <div id="Company PPT" class="nav-container" style="display: flex;">
+        <div class="container">
+            <!-- Example Card -->
+            <div class="card">
+                <h3>Fin2Research PPT For Investors</h3>
+                    <a href="https://firebasestorage.googleapis.com/v0/b/fin2reseach.appspot.com/o/FIN2RESEARCH%20COMPANY%20PROFILE.pdf?alt=media&token=e43d1e69-3280-45dd-ba88-90aade8422fa" class="recommendation sell" style="font-size: 18px; text-align: center;">Click here to Download</a>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+
+    <div id="Equity Portfolio Strategy" class="nav-container">
+        <div class="container">
+            <!-- Example Card -->
+            <div class="card">
+                <h3>Rallis India Ltd</h3>
+                <div class="recommendation sell">SELL</div>
+                <p>Current Price: 268.60</p>
+                <p>Record Price: 286.00</p>
+                <p>Target: 200.00</p>
+                <p>Status: OPEN</p>
+                <p>Accrued Return: -0.98%</p>
+                <p>Market Cap (in Cr.): 4,760.80</p>
+                <p>Investment Horizon: Long term</p>
+                <a href="#" class="insight">INSIGHT</a>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+
+    <div id="Form" class="nav-container">
+        <div class="container">
+            <!-- Individual Form Card -->
+            <div class="card">
+                <h3>Individual Form</h3>
+                <a href="https://firebasestorage.googleapis.com/v0/b/fin2research-e902b.appspot.com/o/Individual%20Form%20by%20Fin2research%20(2).pdf?alt=media&token=0743bc44-b541-4aa3-b90e-f44ce4e37b43" class="insight">Click here to download</a>
+            </div>
+            <!-- Non-Individual Form Card -->
+            <div class="card">
+                <h3>Non-Individual Form</h3>
+                <a href="https://firebasestorage.googleapis.com/v0/b/fin2research-e902b.appspot.com/o/non%20individual%20form%20by%20fin2research.pdf?alt=media&token=512f4b15-9fbd-42b1-bd91-2cb7bd1ee55c" class="insight">Click here to download</a>
+            </div>
+        </div>
+    </div>
+
+    <center>
+        <a href="https://fin2research.com/disclaimer/" class="buy-button" style="font-size: 12px;">Disclaimer</a>
+    </center>
+
+    <script>
+        function showTab(tabId) {
+            if (tabId === 'Form') {
+                const password = prompt('Enter the key to access the Fact Sheet:');
+                if (password !== '00000') {
+                    alert('Incorrect key.');
+                    return;
+                }
+            }
+
+            // Hide all sections
+            document.querySelectorAll('.nav-container').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+                tab.classList.add('inactive');
+            });
+
+            // Show the selected section
+            document.getElementById(tabId).style.display = 'flex';
+
+            // Add active class to the selected tab
+            event.target.classList.add('active');
+            event.target.classList.remove('inactive');
+        }
+    </script>
+</body>
+</html>
